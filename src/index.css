@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "tailwindcss";
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+
+/* ============================= */
+/* Certificate Roll Down Effect */
+/* ============================= */
+
+@keyframes rollDown {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+.animate-rollDown {
+  animation: rollDown 1.8s ease-out forwards;
+}
+
+
+/* ============================= */
+/* Students Infinite Scroll */
+/* ============================= */
+
+@keyframes autoScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-autoScroll {
+  animation: autoScroll 22s linear infinite;
+}
+
+
+
+@theme{
+  --default-transition-duration: 200ms;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================= */
+/* Slick Slider Fixes */
+/* ============================= */
+.testimonial-slider .slick-track {
+  display: flex !important;
+  align-items: stretch;
+}
+.testimonial-slider .slick-slide {
+  height: auto !important;
+}
+.testimonial-slider .slick-slide > div {
+  height: 100%;
+}
+.testimonial-slider .slick-dots li button:before {
+  color: #f97316 !important; /* Orange dots */
+  font-size: 10px;
+}
+.testimonial-slider .slick-dots li.slick-active button:before {
+  color: #ea580c !important;
+  opacity: 1;
+}
