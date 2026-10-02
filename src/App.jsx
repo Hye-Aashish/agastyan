@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import { useLayoutEffect } from "react";
 
 
 /* ========== LAYOUTS ========== */
@@ -37,16 +36,6 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import ErrorElement from "./components/ErrorElement";
 
 const SiteAccessWrapper = ({ children }) => {
-  // useLayoutEffect runs before the browser paints, avoiding a flash where
-  // ProtectedRoute sees missing siteAccess on first render.
-  useLayoutEffect(() => {
-    try {
-      localStorage.setItem("siteAccess", "true");
-    } catch (e) {
-      // ignore
-    }
-  }, []);
-
   return children;
 };
 
