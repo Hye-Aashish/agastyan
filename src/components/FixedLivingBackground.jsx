@@ -1096,12 +1096,17 @@ const FixedLivingBackground = () => {
 
     function drawCourses() {
       const isDark = sim.isDark;
+      const sy = window.scrollY || window.pageYOffset || 0;
       ctx.textAlign = "center";
       for (let i = 0; i < sim.courses.length; i++) {
         const c = sim.courses[i];
         const by =
-          c.y + (sim.reduce ? 0 : Math.sin(sim.t * 0.9 + c.ph) * 6);
+          c.y - sy + (sim.reduce ? 0 : Math.sin(sim.t * 0.9 + c.ph) * 6);
         c.dy = by;
+
+        // Only draw while the hero (and its course portals) is still on screen,
+        // so the rings scroll away with the hero instead of floating over content.
+        if (by < -70 || by > sim.H + 70) continue;
 
         const col = isDark
           ? "hsla(" + c.hue + ",100%,68%,"

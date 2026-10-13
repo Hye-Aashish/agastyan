@@ -47,19 +47,29 @@ const FloatingButtons = () => {
 
   return (
     <div className="fixed bottom-4 right-3.5 sm:bottom-6 sm:right-6 flex flex-col items-center gap-2 sm:gap-3 z-40 pointer-events-auto">
-      {/* Ambient Sound Toggle (Positioned at the top of the WhatsApp Button) */}
+      {/* Ambient Sound Toggle (On/Off Switch matching DarkModeToggle) */}
       <button
         onClick={toggleSound}
         type="button"
         title={soundOn ? "Ambient Sound: On (Click to Mute)" : "Ambient Sound: Off (Click to Play)"}
         aria-label={soundOn ? "Mute ambient audio" : "Play ambient audio"}
-        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg transition-all duration-300 backdrop-blur-md flex items-center justify-center cursor-pointer border hover:scale-110 active:scale-95 ${
+        className={`w-14 h-7 flex items-center p-1 cursor-pointer transition duration-300 rounded-full shadow-lg backdrop-blur-md border hover:scale-105 active:scale-95 ${
           soundOn
-            ? "bg-[#ef7b01] text-white border-orange-400 shadow-orange-500/40 ring-2 ring-orange-400/50"
-            : "bg-white/95 dark:bg-[#0b1330]/90 text-gray-700 dark:text-[#e9eefc] border-orange-200/80 dark:border-white/20 hover:border-[#ef7b01] hover:text-[#ef7b01]"
+            ? "bg-[#ef7b01] border-orange-400 shadow-orange-500/40 ring-2 ring-orange-400/40"
+            : "bg-gray-300 dark:bg-gray-700 border-gray-400/30 dark:border-white/15"
         }`}
       >
-        {soundOn ? <FaVolumeUp size={16} className="sm:text-lg" /> : <FaVolumeMute size={16} className="sm:text-lg" />}
+        <div
+          className={`w-5 h-5 bg-white rounded-full shadow-md transform transition duration-300 flex items-center justify-center text-xs ${
+            soundOn ? "translate-x-7" : "translate-x-0"
+          }`}
+        >
+          {soundOn ? (
+            <FaVolumeUp className="text-[#ef7b01] text-[11px]" />
+          ) : (
+            <FaVolumeMute className="text-gray-500 text-[11px]" />
+          )}
+        </div>
       </button>
 
       {/* WhatsApp Button */}
