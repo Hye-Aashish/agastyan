@@ -3,7 +3,7 @@ import AboutMissionVision from "./AboutMissionVision";
 import AboutWhyChoose from "./AboutWhyChoose";
 const About = () => {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-x-clip">
       <AboutIntro />
       <AboutMissionVision />
       <AboutWhyChoose />

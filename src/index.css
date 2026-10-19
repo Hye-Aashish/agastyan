@@ -1,15 +1,77 @@
 @import "tailwindcss";
-@import "tailwindcss";
 
 *{
     font-family: 'Inter', sans-serif;
 }
 
-/* Prevent mobile pull-to-refresh bounce / rubber-banding that makes the
-   first (hero) section shift up and down while scrolling. */
-html,
+/* ========================================================= */
+/* Clean, Smooth Page Scrolling & No-Horizontal Overflow     */
+/* Uses 'clip' to prevent breaking mouse wheel scroll on Win */
+/* ========================================================= */
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  overflow-y: auto;
+  overscroll-behavior: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ef7b01 transparent;
+}
+
 body {
-  overscroll-behavior-y: none;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: clip;
+  overflow-y: visible !important;
+  overscroll-behavior: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ========================================================= */
+/* Sleek, Modern Custom Scrollbar (Agastyaan Theme)          */
+/* ========================================================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(239, 123, 1, 0.65);
+  border-radius: 9999px;
+  transition: all 0.2s ease-in-out;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(239, 123, 1, 0.55);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ef7b01 !important;
+  box-shadow: 0 0 10px rgba(239, 123, 1, 0.8);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #ea580c !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+  display: none;
 }
 
 @keyframes float {

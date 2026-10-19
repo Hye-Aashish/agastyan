@@ -49,7 +49,7 @@ const StudentCertification = () => {
                 <img
                   src={Images.certificate}
                   alt="Certificate"
-                  className="relative w-72 md:w-88 rounded-xl object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+                  className="relative w-full max-w-[260px] sm:max-w-xs md:max-w-sm rounded-xl object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>

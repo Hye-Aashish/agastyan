@@ -81,7 +81,7 @@ const HeroSection = () => {
   }, [handleCloseCard]);
 
   return (
-    <section className="relative w-full min-h-[92svh] md:min-h-screen flex flex-col justify-start pt-6 sm:pt-10 md:pt-12 pb-16 px-4 text-center select-none z-10 font-sans bg-transparent">
+    <section id="hero-section" className="relative w-full min-h-[76vh] md:min-h-[82vh] flex flex-col justify-start pt-6 sm:pt-8 md:pt-10 pb-6 sm:pb-8 px-4 text-center select-none z-10 font-sans bg-transparent">
       
       {/* Copy / Hero Heading */}
       <div className="max-w-4xl mx-auto px-4 pointer-events-none z-10 font-sans">
@@ -157,7 +157,7 @@ const HeroSection = () => {
       {/* Interaction Hint Bottom */}
       <div
         id="hint"
-        className={`fixed left-0 right-0 bottom-[calc(18px+env(safe-area-inset-bottom,0px))] text-center text-sm text-gray-600 dark:text-[#9fb0d9] font-medium pointer-events-none transition-opacity duration-1000 z-20 ${
+        className={`absolute left-0 right-0 bottom-4 text-center text-sm text-gray-600 dark:text-[#9fb0d9] font-medium pointer-events-none transition-opacity duration-1000 z-20 ${
           hintVisible ? "opacity-100" : "opacity-0"
         }`}
       >

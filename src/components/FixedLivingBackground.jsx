@@ -465,8 +465,8 @@ const FixedLivingBackground = () => {
         ? [0.26, 0.74, 0.26, 0.74, 0.26, 0.74]
         : [0.15, 0.29, 0.43, 0.57, 0.71, 0.85];
       const cys = narrow
-        ? [0.38, 0.38, 0.5, 0.5, 0.62, 0.62]
-        : [0.5, 0.5, 0.5, 0.5, 0.5, 0.5];
+        ? [0.44, 0.44, 0.53, 0.53, 0.62, 0.62]
+        : [0.52, 0.52, 0.52, 0.52, 0.52, 0.52];
       sim.courses = [];
       for (let ci = 0; ci < 6; ci++) {
         sim.courses.push({
@@ -1100,8 +1100,10 @@ const FixedLivingBackground = () => {
       ctx.textAlign = "center";
       for (let i = 0; i < sim.courses.length; i++) {
         const c = sim.courses[i];
+        if (!c || !Number.isFinite(c.x) || !Number.isFinite(c.y)) continue;
         const by =
           c.y - sy + (sim.reduce ? 0 : Math.sin(sim.t * 0.9 + c.ph) * 6);
+        if (!Number.isFinite(by)) continue;
         c.dy = by;
 
         // Only draw while the hero (and its course portals) is still on screen,
@@ -1373,24 +1375,28 @@ const FixedLivingBackground = () => {
       sim.t += dt;
       sim.isDark = document.documentElement.classList.contains("dark");
 
-      drawSky();
-      drawAurora();
-      drawStars();
-      drawShoot();
-      drawCraft();
-      drawHills(0);
-      drawCity();
-      drawCourses();
-      drawFlies(dt);
-      drawHills(1);
-      drawTrees();
-      drawBirds(dt);
-      drawBushes();
-      updateRabbit(dt);
-      drawRabbit();
-      drawGrass();
-      drawPond();
-      drawMush();
+      try {
+        drawSky();
+        drawAurora();
+        drawStars();
+        drawShoot();
+        drawCraft();
+        drawHills(0);
+        drawCity();
+        drawCourses();
+        drawFlies(dt);
+        drawHills(1);
+        drawTrees();
+        drawBirds(dt);
+        drawBushes();
+        updateRabbit(dt);
+        drawRabbit();
+        drawGrass();
+        drawPond();
+        drawMush();
+      } catch (err) {
+        console.error("Frame draw error:", err);
+      }
 
       sim.animId = requestAnimationFrame(frame);
     }
@@ -1414,9 +1420,8 @@ const FixedLivingBackground = () => {
       const bx = p.clientX;
       const by = p.clientY;
 
-      // Check if clicking on a course portal orb (ONLY when viewing the hero section)
-      const sy = window.scrollY || window.pageYOffset || 0;
-      if (!isInteractive && sy < 250) {
+      // Check if clicking on a course portal orb (whenever visible on screen)
+      if (!isInteractive) {
         const hc = hitCourse(bx, by);
         if (hc >= 0) {
           window.dispatchEvent(new CustomEvent("open-course-card", { detail: { courseIndex: hc } }));

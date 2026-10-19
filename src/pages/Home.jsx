@@ -1,4 +1,5 @@
 import React from 'react'
+import CareerTerminalSection from '../components/CareerTerminalSection'
 import HeroSection from './HeroSection'
 import OurCoruses from './OurCoruses'
 import PlacementProcess from './PlacementProcess'
@@ -15,6 +16,7 @@ const Home = () => {
     <>
       <ApplyNowPopup />
       <HeroSection />
+      <CareerTerminalSection />
       <StatsCounter />
       <OurCoruses />
       <PlacementProcess />

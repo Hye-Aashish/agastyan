@@ -13,7 +13,7 @@ const SiteLayout = () => {
   }, [pathname]);
 
   return (
-    <div className="relative min-h-screen bg-transparent text-gray-900 dark:text-[#e9eefc] overflow-x-hidden transition-colors duration-500">
+    <div className="relative min-h-screen bg-transparent text-gray-900 dark:text-[#e9eefc] overflow-x-clip transition-colors duration-500">
 
       {/* Global Fixed Living World Canvas Background (Static across all pages and scrolling) */}
       <FixedLivingBackground />

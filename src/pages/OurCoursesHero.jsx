@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { Sparkles, Code2, Rocket, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
 
 const courseCategories = [
-  { name: "Full Stack MERN", path: "/fullstack", count: "6 Months", badge: "Hot Track" },
-  { name: "Frontend Development", path: "/frontend", count: "3 Months", badge: "Popular" },
-  { name: "Backend & APIs", path: "/backend", count: "3 Months", badge: "High Demand" },
-  { name: "Python & Django", path: "/python-django", count: "4 Months", badge: "Trending" },
-  { name: "Database Systems", path: "/database", count: "2 Months", badge: "Core Skill" },
-  { name: "Tools & DevOps", path: "/tools-api", count: "2 Months", badge: "Essential" },
+  { name: "Full Stack Development", path: "/fullstack", count: "6 Months", badge: "Hot Track" },
+  { name: "Data Science & ML", path: "/data-science", count: "4 - 6 Months", badge: "Top Career" },
+  { name: "Web Designing", path: "/web-designing", count: "3 Months", badge: "Creative UI" },
+  { name: "Flutter & Dart Mobile", path: "/flutter", count: "3 - 6 Months", badge: "Cross-Platform" },
+  { name: "PHP, Laravel, WordPress", path: "/php-laravel-wordpress", count: "4 - 6 Months", badge: "High Demand" },
+  { name: "AutoCAD (2D & 3D)", path: "/autocad", count: "2 - 3 Months", badge: "CAD Standard" },
+  { name: "Power BI & Analytics", path: "/power-bi", count: "2 - 3 Months", badge: "Executive BI" },
+  { name: "AI & Machine Learning", path: "/ai-ml", count: "6 Months", badge: "Cutting Edge" },
 ];
 
 const OurCoursesHero = () => {

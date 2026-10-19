@@ -21,7 +21,17 @@ import FullStack from "./pages/FullStack";
 import PythonDjango from "./pages/PythonDjango";
 import Database from "./pages/Database";
 import ToolsApi from "./pages/ToolsApi";
-
+import AiMl from "./pages/AiMl";
+import WebDesigning from "./pages/WebDesigning";
+import PhpLaravelWordpress from "./pages/PhpLaravelWordpress";
+import PythonFlaskDjango from "./pages/PythonFlaskDjango";
+import DataScience from "./pages/DataScience";
+import DataAnalytics from "./pages/DataAnalytics";
+import Robotics from "./pages/Robotics";
+import AutoCAD from "./pages/AutoCAD";
+import BubbleIo from "./pages/BubbleIo";
+import PowerBi from "./pages/PowerBi";
+import Flutter from "./pages/Flutter";
 
 import WebDevelopment from "./pages/WebDevelopment";
 import AppDevelopment from "./pages/AppDevelopment";
@@ -154,6 +164,94 @@ const App = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <ToolsApi />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "web-designing",
+        element: (
+          <ProtectedRoute>
+            <WebDesigning />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "php-laravel-wordpress",
+        element: (
+          <ProtectedRoute>
+            <PhpLaravelWordpress />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "python-flask-django",
+        element: (
+          <ProtectedRoute>
+            <PythonFlaskDjango />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "data-science",
+        element: (
+          <ProtectedRoute>
+            <DataScience />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "data-analytics",
+        element: (
+          <ProtectedRoute>
+            <DataAnalytics />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "ai-ml",
+        element: (
+          <ProtectedRoute>
+            <AiMl />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "robotics",
+        element: (
+          <ProtectedRoute>
+            <Robotics />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "autocad",
+        element: (
+          <ProtectedRoute>
+            <AutoCAD />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "bubble-io",
+        element: (
+          <ProtectedRoute>
+            <BubbleIo />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "power-bi",
+        element: (
+          <ProtectedRoute>
+            <PowerBi />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "flutter",
+        element: (
+          <ProtectedRoute>
+            <Flutter />
           </ProtectedRoute>
         ),
       },

@@ -96,7 +96,7 @@ const PlacementProcess = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
               className="
-                group relative w-[270px] p-6 text-center rounded-3xl
+                group relative w-[min(100%,280px)] sm:w-[270px] p-6 text-center rounded-3xl
                 bg-white/95 dark:bg-[#080e24]/85
                 backdrop-blur-xl
                 border-2 border-orange-100/90 dark:border-white/[0.12]

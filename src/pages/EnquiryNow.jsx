@@ -1,39 +1,52 @@
+import { Link } from "react-router-dom";
+import { Sparkles, ArrowLeft } from "lucide-react";
 import EnquiryForm from "../components/EnquiryForm";
 
 const EnquiryNow = () => {
   return (
-    <div
-      className="
-        min-h-[100dvh] py-10 md:py-12
-        bg-transparent
-        transition-colors duration-500
-      "
-    >
-      <div className="container mx-auto px-4 md:px-6">
+    <div className="min-h-[90vh] py-12 md:py-16 bg-transparent transition-colors duration-500">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
-        {/* Card */}
+        {/* Back Link */}
+        <div className="mb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-xs font-bold text-gray-600 hover:text-[#ef7b01] dark:text-gray-400 dark:hover:text-orange-400 transition"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Home</span>
+          </Link>
+        </div>
+
+        {/* Form Card Container */}
         <div className="
-          max-w-7xl mx-auto overflow-hidden rounded-2xl
-          bg-white/90 dark:bg-[#080e24]/90
-          backdrop-blur-xl
-          shadow-xl shadow-orange-500/5 dark:shadow-black/40
-          border border-orange-100/90 dark:border-white/10
-        " data-aos="zoom-in">
+          overflow-hidden rounded-3xl
+          bg-white/95 dark:bg-[#070c1e]/95
+          backdrop-blur-2xl
+          shadow-2xl shadow-orange-500/10 dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]
+          border-2 border-orange-100/90 dark:border-white/15
+        ">
+          {/* Header Banner */}
+          <div className="relative bg-gradient-to-r from-[#ef7b01] via-amber-500 to-[#2E7D32] p-6 sm:p-8 text-white shadow-md">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/30 backdrop-blur-md text-white text-xs font-black uppercase tracking-wider mb-2.5 border border-white/20">
+              <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
+              <span>Official Admission &amp; Mentorship Cell</span>
+            </div>
 
-          {/* Header */}
-          <div className="bg-[#F28C28] p-8 text-white">
-            <h1 className="text-3xl font-bold">Enquiry Now</h1>
-            <p className="mt-2 text-white/90">
-              Fill the form and our team will contact you soon
+            <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              Course Enquiry &amp; Career Counseling
+            </h1>
+            <p className="mt-1.5 text-xs sm:text-sm text-white/90 max-w-xl font-medium">
+              Fill out your details below. Our senior industry counselors will review your profile and connect within 15 minutes.
             </p>
           </div>
 
-          {/* Form */}
-          <div className="p-8">
+          {/* Form Body */}
+          <div className="p-6 sm:p-8 md:p-10">
             <EnquiryForm />
           </div>
-
         </div>
+
       </div>
     </div>
   );
