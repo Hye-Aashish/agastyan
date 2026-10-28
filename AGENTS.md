@@ -19,3 +19,11 @@ Always apply the following rules when building, editing, or styling user interfa
 
 ## 4. Skills & Reference
 - Skill Reference: [modern-ui-design](file:///d:/agastyan/agastyan/.agents/skills/modern-ui-design/SKILL.md)
+
+## Cursor Cloud specific instructions
+
+- This is a static Vite + React SPA. There is no API server and no required secrets.
+- Install dependencies with `npm ci` (Node 22, `package-lock.json`).
+- Dev server: `npm run dev -- --host 0.0.0.0 --port 5173` (http://localhost:5173).
+- `npm run build` writes `dist/`. `npm run lint` currently exits nonzero because of existing unused-variable and react-hooks issues in `src/`; that is application code, not a missing toolchain.
+- Course enquiry is client-side. Submitting the form shows “Enquiry Received!” and opens WhatsApp.
